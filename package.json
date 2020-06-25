@@ -1,0 +1,15 @@
+{
+  "name": "thursday-slack-bot",
+  "version": "1.0.0",
+  "description": "A bot that posts \"Thursday, what a concept!\" from Russian Doll to Slack every Thursday",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MatthewStanciu",
+  "license": "MIT",
+  "dependencies": {
+    "form-data": "^3.0.0",
+    "node-fetch": "^2.6.0"
+  }
+}
