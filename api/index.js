@@ -4,9 +4,10 @@ import { join } from 'path'
 import FormData from 'form-data'
 
 export default async (req, res) => {
-  if (req.headers['user-agent'] != 'EasyCron/1.0 (https://www.easycron.com/)') {
-    return res.status(403).send('Only EasyCron can make this request!')
+  if (req.headers.authorization !== `Bearer ${process.env.SLACK_BOT_TOKEN}`) {
+    return res.status(401).send('Unauthorized request')
   }
+  
   const now = new Date().toISOString().substring(0, 10)
   const thursday = fs.readFileSync(join(__dirname, 'thursday.jpg'))
   const form = new FormData()
